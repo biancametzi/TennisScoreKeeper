@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="score_for_each_set">25sp</dimen>
+    <dimen name="final_score">40sp</dimen>
+    <dimen name="player_name">25sp</dimen>
+    <dimen name="players_top_margin">10dp</dimen>
+    <dimen name="players_bottom_margin">10dp</dimen>
+    <dimen name="set_bottom_margin">6dp</dimen>
+    <dimen name="button_bottom_margin">20dp</dimen>
+
+</resources>

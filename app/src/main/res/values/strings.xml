@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Tennis Score Keeper</string>
+    <string name="first_player">Player 1</string>
+    <string name="first_set_score_first_player">0</string>
+    <string name="second_set_score_first_player">0</string>
+    <string name="third_set_score_first_player">0</string>
+    <string name="score_first_player">0</string>
+    <string name="increase_score_first_player">+</string>
+    <string name="second_player">Player 2</string>
+    <string name="first_set_score_second_player">0</string>
+    <string name="second_set_score_second_player">0</string>
+    <string name="third_set_score_second_player">0</string>
+    <string name="score_second_player">0</string>
+    <string name="increase_score_second_player">+</string>
+    <string name="reset_button">RESET</string>
+</resources>
