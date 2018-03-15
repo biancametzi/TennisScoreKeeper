@@ -1,114 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d7ccc8"
+    android:fillViewport="true"
     tools:context="com.example.android.tennisscorekeeper.MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="#d7ccc8">
 
-        <LinearLayout style="@style/LinearLayoutBothPlayers">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
-                style="@style/PlayersName"
-                android:layout_marginBottom="@dimen/players_bottom_margin"
+            <LinearLayout style="@style/LinearLayoutBothPlayers">
+
+                <TextView
+                    style="@style/PlayersName"
+                    android:layout_marginBottom="@dimen/players_bottom_margin"
+                    android:layout_marginTop="@dimen/players_top_margin"
+                    android:text="@string/first_player"
+                    android:textSize="@dimen/player_name" />
+
+                <TextView
+                    android:id="@+id/firstSetPlayer1"
+                    style="@style/SetsStyle"
+                    android:layout_marginBottom="@dimen/set_bottom_margin"
+                    android:text="@string/first_set_score_first_player"
+                    android:textSize="@dimen/score_for_each_set" />
+
+                <TextView
+                    android:id="@+id/secondSetPlayer1"
+                    style="@style/SetsStyle"
+                    android:layout_marginBottom="@dimen/set_bottom_margin"
+                    android:text="@string/second_set_score_first_player"
+                    android:textSize="@dimen/score_for_each_set" />
+
+                <TextView
+                    android:id="@+id/thirdSetPlayer1"
+                    style="@style/SetsStyle"
+                    android:layout_marginBottom="@dimen/set_bottom_margin"
+                    android:text="@string/third_set_score_first_player"
+                    android:textSize="@dimen/score_for_each_set" />
+
+                <TextView
+                    android:id="@+id/pointsPlayer1"
+                    style="@style/SetsStyle"
+                    android:text="@string/score_first_player"
+                    android:textSize="@dimen/final_score" />
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:onClick="addPointToPlayer1"
+                    android:text="@string/increase_score_first_player" />
+
+                <TextView
+                    style="@style/Challenges"
+                    android:layout_marginTop="@dimen/challenges_top_margin"
+                    android:text="@string/number_challenges_left"
+                    android:textSize="@dimen/challenges" />
+
+                <TextView
+                    android:id="@+id/numberOfChallengesLeftPlayer1"
+                    style="@style/SetsStyle"
+                    android:text="@string/total_challenges"
+                    android:textSize="@dimen/score_for_each_set" />
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:onClick="decreaseChallengesPlayer1"
+                    android:text="@string/decrease_challenges_number_first_player" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/players_top_margin"
-                android:text="@string/first_player"
-                android:textSize="@dimen/player_name" />
+                android:background="#007120" />
 
-            <TextView
-                android:id="@+id/firstSetPlayer1"
-                style="@style/SetsStyle"
-                android:layout_marginBottom="@dimen/set_bottom_margin"
-                android:text="@string/first_set_score_first_player"
-                android:textSize="@dimen/score_for_each_set" />
+            <LinearLayout style="@style/LinearLayoutBothPlayers">
 
-            <TextView
-                android:id="@+id/secondSetPlayer1"
-                style="@style/SetsStyle"
-                android:layout_marginBottom="@dimen/set_bottom_margin"
-                android:text="@string/second_set_score_first_player"
-                android:textSize="@dimen/score_for_each_set" />
+                <TextView
+                    style="@style/PlayersName"
+                    android:layout_marginBottom="@dimen/players_bottom_margin"
+                    android:layout_marginTop="@dimen/players_top_margin"
+                    android:text="@string/second_player"
+                    android:textSize="@dimen/player_name" />
 
-            <TextView
-                android:id="@+id/thirdSetPlayer1"
-                style="@style/SetsStyle"
-                android:layout_marginBottom="@dimen/set_bottom_margin"
-                android:text="@string/third_set_score_first_player"
-                android:textSize="@dimen/score_for_each_set" />
+                <TextView
+                    android:id="@+id/firstSetPlayer2"
+                    style="@style/SetsStyle"
+                    android:layout_marginBottom="@dimen/set_bottom_margin"
+                    android:text="@string/first_set_score_second_player"
+                    android:textSize="@dimen/score_for_each_set" />
 
-            <TextView
-                android:id="@+id/pointsPlayer1"
-                style="@style/SetsStyle"
-                android:text="@string/score_first_player"
-                android:textSize="@dimen/final_score" />
+                <TextView
+                    android:id="@+id/secondSetPlayer2"
+                    style="@style/SetsStyle"
+                    android:layout_marginBottom="@dimen/set_bottom_margin"
+                    android:text="@string/second_set_score_second_player"
+                    android:textSize="@dimen/score_for_each_set" />
 
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="addPointToPlayer1"
-                android:text="@string/increase_score_first_player" />
+                <TextView
+                    android:id="@+id/thirdSetPlayer2"
+                    style="@style/SetsStyle"
+                    android:layout_marginBottom="@dimen/set_bottom_margin"
+                    android:text="@string/third_set_score_second_player"
+                    android:textSize="@dimen/score_for_each_set" />
+
+                <TextView
+                    android:id="@+id/pointsPlayer2"
+                    style="@style/SetsStyle"
+                    android:text="@string/score_second_player"
+                    android:textSize="@dimen/final_score" />
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:onClick="addPointToPlayer2"
+                    android:text="@string/increase_score_second_player" />
+
+                <TextView
+                    style="@style/Challenges"
+                    android:layout_marginTop="@dimen/challenges_top_margin"
+                    android:text="@string/number_challenges_left"
+                    android:textSize="@dimen/challenges" />
+
+                <TextView
+                    android:id="@+id/numberOfChallengesLeftPlayer2"
+                    style="@style/SetsStyle"
+                    android:text="@string/total_challenges"
+                    android:textSize="@dimen/score_for_each_set" />
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:onClick="decreaseChallengesPlayer2"
+                    android:text="@string/decrease_challenges_number_first_player" />
+            </LinearLayout>
+
         </LinearLayout>
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/players_top_margin"
-            android:background="#007120" />
-
-        <LinearLayout style="@style/LinearLayoutBothPlayers">
-
-            <TextView
-                style="@style/PlayersName"
-                android:layout_marginBottom="@dimen/players_bottom_margin"
-                android:layout_marginTop="@dimen/players_top_margin"
-                android:text="@string/second_player"
-                android:textSize="@dimen/player_name" />
-
-            <TextView
-                android:id="@+id/firstSetPlayer2"
-                style="@style/SetsStyle"
-                android:layout_marginBottom="@dimen/set_bottom_margin"
-                android:text="@string/first_set_score_second_player"
-                android:textSize="@dimen/score_for_each_set" />
-
-            <TextView
-                android:id="@+id/secondSetPlayer2"
-                style="@style/SetsStyle"
-                android:layout_marginBottom="@dimen/set_bottom_margin"
-                android:text="@string/second_set_score_second_player"
-                android:textSize="@dimen/score_for_each_set" />
-
-            <TextView
-                android:id="@+id/thirdSetPlayer2"
-                style="@style/SetsStyle"
-                android:layout_marginBottom="@dimen/set_bottom_margin"
-                android:text="@string/third_set_score_second_player"
-                android:textSize="@dimen/score_for_each_set" />
-
-            <TextView
-                android:id="@+id/pointsPlayer2"
-                style="@style/SetsStyle"
-                android:text="@string/score_second_player"
-                android:textSize="@dimen/final_score" />
-
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="addPointToPlayer2"
-                android:text="@string/increase_score_second_player" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/reset_button"
-        style="@style/ButtonStyle"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/button_bottom_margin"
-        android:onClick="resetScore"
-        android:text="@string/reset_button" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/reset_button"
+            style="@style/ButtonStyle"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/button_bottom_margin"
+            android:onClick="resetScore"
+            android:text="@string/reset_button" />
+    </RelativeLayout>
+</ScrollView>

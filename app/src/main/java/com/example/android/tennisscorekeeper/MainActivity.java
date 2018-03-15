@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         savedInstanceState.putInt("player1Set3", player1Set3);
         savedInstanceState.putInt("player2Set3", player2Set3);
         savedInstanceState.putInt("currentSetId", currentSetId);
+        savedInstanceState.putInt("numberOfChallengesLeftPlayer1", numberOfChallengesLeftPlayer1);
+        savedInstanceState.putInt("numberOfChallengesLeftPlayer2", numberOfChallengesLeftPlayer2);
 
         super.onSaveInstanceState(savedInstanceState);
     }
@@ -43,8 +45,11 @@ public class MainActivity extends AppCompatActivity {
         player1Set3 = savedInstanceState.getInt("player1Set3");
         player2Set3 = savedInstanceState.getInt("player2Set3");
         currentSetId = savedInstanceState.getInt("currentSetId");
+        numberOfChallengesLeftPlayer1 = savedInstanceState.getInt("numberOfChallengesLeftPlayer1");
+        numberOfChallengesLeftPlayer2 = savedInstanceState.getInt("numberOfChallengesLeftPlayer2");
 
         updateScoreOnUI();
+        updateChallengeOnUI();
     }
 
     int player1Set1 = 0;
@@ -54,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
     int player1Set3 = 0;
     int player2Set3 = 0;
     int currentSetId = 1;
+    int numberOfChallengesLeftPlayer1 = 3;
+    int numberOfChallengesLeftPlayer2 = 3;
 
     String player1CurrentGameScore = "0";    // -> 0, 15, 30, 40, AD
     String player2CurrentGameScore = "0";    // -> 0, 15, 30, 40, AD
@@ -133,6 +140,17 @@ public class MainActivity extends AppCompatActivity {
         updateScoreOnUI();
     }
 
+    //decreases number of challenges for player 1
+    public void decreaseChallengesPlayer1(View view) {
+
+        if (numberOfChallengesLeftPlayer1 > 0)
+            numberOfChallengesLeftPlayer1 = numberOfChallengesLeftPlayer1 - 1;
+        else
+            numberOfChallengesLeftPlayer1 = 0;
+
+        updateChallengeOnUI();
+    }
+
     /**
      * This method is called when + button for player2 is clicked (it won the point)
      */
@@ -206,6 +224,17 @@ public class MainActivity extends AppCompatActivity {
         updateScoreOnUI();
     }
 
+    //decreases number of challenges for player 2
+    public void decreaseChallengesPlayer2(View view) {
+
+        if (numberOfChallengesLeftPlayer2 > 0)
+            numberOfChallengesLeftPlayer2 = numberOfChallengesLeftPlayer2 - 1;
+        else
+            numberOfChallengesLeftPlayer2 = 0;
+
+            updateChallengeOnUI();
+    }
+
     private void updateScoreOnUI() {
         TextView player1CurrentGameScoreView = (TextView) findViewById(R.id.pointsPlayer1);
         player1CurrentGameScoreView.setText(String.valueOf(player1CurrentGameScore));
@@ -227,6 +256,14 @@ public class MainActivity extends AppCompatActivity {
         currentSetScoreViewThirdSetForPlayer2.setText(String.valueOf(player2Set3));
     }
 
+    //updated number of challenges
+    public void updateChallengeOnUI() {
+        TextView challengesLeftPlayer1 = (TextView) findViewById(R.id.numberOfChallengesLeftPlayer1);
+        challengesLeftPlayer1.setText(String.valueOf(numberOfChallengesLeftPlayer1));
+        TextView challengesLeftPlayer2 = (TextView) findViewById(R.id.numberOfChallengesLeftPlayer2);
+        challengesLeftPlayer2.setText(String.valueOf(numberOfChallengesLeftPlayer2));
+    }
+
     public void resetScore(View view) {
         player1Set1 = 0;
         player1Set2 = 0;
@@ -236,6 +273,9 @@ public class MainActivity extends AppCompatActivity {
         player2Set3 = 0;
         player1CurrentGameScore = "0";
         player2CurrentGameScore = "0";
+        numberOfChallengesLeftPlayer1 = 3;
+        numberOfChallengesLeftPlayer2 = 3;
+        updateChallengeOnUI();
         updateScoreOnUI();
         currentSetId = 1;
     }

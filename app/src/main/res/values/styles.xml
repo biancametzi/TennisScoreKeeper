@@ -36,4 +36,10 @@
         <item name="android:fontFamily">sans-serif</item>
     </style>
 
+    <style name="Challenges" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#007120</item>
+    </style>
+
 </resources>

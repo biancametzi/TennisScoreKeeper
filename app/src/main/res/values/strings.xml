@@ -13,4 +13,7 @@
     <string name="score_second_player">0</string>
     <string name="increase_score_second_player">+</string>
     <string name="reset_button">RESET</string>
+    <string name="number_challenges_left">Challenges left</string>
+    <string name="total_challenges">3</string>
+    <string name="decrease_challenges_number_first_player">-</string>
 </resources>
